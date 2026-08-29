@@ -222,13 +222,6 @@ a {
   text-transform: uppercase;
 }
 
-.demo-label {
-  padding: 1px 4px;
-  color: var(--terracotta);
-  border: 1px solid rgba(173, 86, 55, 0.4);
-  font-size: 8px;
-}
-
 main {
   min-width: 0;
   padding: 68px 0 36px;

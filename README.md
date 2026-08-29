@@ -5,7 +5,7 @@ Source for [ahmikat.github.io](https://ahmikat.github.io/), a lightweight and re
 ## Updating content
 
 - Edit profile and section copy in `index.html`.
-- Replace the temporary Google Drive URL with the final CV share link in both CV anchors.
+- Replace `assets/Aftab_Hossain_Mikat_CV.pdf` whenever the CV is updated; both CV anchors already point to it.
 - Add the official BabyLM paper and code links when they become public.
 - Replace `assets/aftab-hossain-mikat.jpg` to update the portrait.
 - Replace `assets/og.png` to update the social sharing card.
