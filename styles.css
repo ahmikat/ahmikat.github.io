@@ -184,8 +184,8 @@ a {
 .desktop-nav {
   display: grid;
   gap: 2px;
-  margin: 27px 0;
-  padding: 17px 0;
+  margin: 34px 0;
+  padding: 22px 0;
   border-block: 1px solid var(--line);
 }
 
@@ -210,40 +210,6 @@ a {
 .desktop-nav a.active {
   color: var(--navy);
   transform: translateX(4px);
-}
-
-.profile-contact-links {
-  display: flex;
-  gap: 8px;
-  margin-top: 16px;
-}
-
-.profile-contact-links a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  color: var(--navy);
-  background: rgba(255, 253, 248, 0.62);
-  border: 1px solid var(--line);
-  border-radius: 50%;
-  text-decoration: none;
-  transition: color 180ms ease, background 180ms ease, border-color 180ms ease,
-    transform 180ms ease;
-}
-
-.profile-contact-links a:hover {
-  color: var(--white);
-  background: var(--terracotta);
-  border-color: var(--terracotta);
-  transform: translateY(-3px);
-}
-
-.profile-contact-links svg {
-  width: 14px;
-  height: 14px;
-  fill: currentColor;
 }
 
 .sidebar-cv-link {
@@ -756,18 +722,38 @@ main {
   font-size: clamp(23px, 4vw, 36px);
 }
 
-.contact-links {
+.contact-icon-links {
   display: flex;
-  gap: 22px;
-  margin-top: 42px;
+  gap: 10px;
+  margin-top: 36px;
 }
 
-.contact-links a {
+.contact-icon-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
   color: var(--white);
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  border-radius: 50%;
+  text-decoration: none;
+  transition: color 180ms ease, background 180ms ease, border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.contact-icon-links a:hover {
+  color: var(--navy-dark);
+  background: #f4b49c;
+  border-color: #f4b49c;
+  transform: translateY(-3px);
+}
+
+.contact-icon-links svg {
+  width: 15px;
+  height: 15px;
+  fill: currentColor;
 }
 
 footer {
@@ -895,11 +881,6 @@ footer {
   .desktop-nav,
   .sidebar-cv-link {
     display: none;
-  }
-
-  .profile-contact-links {
-    grid-column: 1 / -1;
-    margin-top: 0;
   }
 
   main {
