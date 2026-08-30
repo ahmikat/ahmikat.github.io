@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="{{ page.description | escape }}" />
+    <meta name="theme-color" content="#f6f2e9" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="{{ page.title | escape }}" />
+    <meta property="og:description" content="{{ page.description | escape }}" />
+    <meta property="og:url" content="{{ page.url | absolute_url }}" />
+    <meta property="og:image" content="{{ '/assets/og.png' | absolute_url }}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{ page.title | escape }}" />
+    <meta name="twitter:description" content="{{ page.description | escape }}" />
+    <meta name="twitter:image" content="{{ '/assets/og.png' | absolute_url }}" />
+    <link rel="canonical" href="{{ page.url | absolute_url }}" />
+    <link rel="icon" href="{{ '/assets/aftab-hossain-mikat.jpg' | relative_url }}" type="image/jpeg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}" />
+    <title>{{ page.title }} - Aftab Hossain Mikat</title>
+  </head>
+  <body class="thought-page">
+    <a class="skip-link" href="#article-content">Skip to article</a>
+
+    <header class="thought-topbar">
+      <a href="{{ '/#thoughts' | relative_url }}" aria-label="Return to Aftab Hossain Mikat's portfolio">
+        <strong>AHM</strong><span>Thoughts</span>
+      </a>
+    </header>
+
+    <main class="thought-shell" id="article-content">
+      <article class="thought-article">
+        <a class="thought-back" href="{{ '/#thoughts' | relative_url }}">← Back to portfolio</a>
+        <p class="section-kicker">Thoughts · {{ page.date | date: "%d %B %Y" }}</p>
+        <h1>{{ page.title }}</h1>
+        <p class="thought-deck">{{ page.description }}</p>
+        <div class="thought-body">{{ content }}</div>
+      </article>
+
+      <footer>
+        <p>© {{ site.time | date: "%Y" }} Aftab Hossain Mikat</p>
+        <p><a href="{{ '/#thoughts' | relative_url }}">More thoughts</a></p>
+      </footer>
+    </main>
+  </body>
+</html>
+

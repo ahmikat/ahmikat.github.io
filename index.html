@@ -1,3 +1,6 @@
+---
+layout: null
+---
 <!doctype html>
 <html lang="en">
   <head>
@@ -80,6 +83,7 @@
       <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
       <a href="#education">Education</a>
+      <a href="#thoughts">Thoughts</a>
       <a href="#contact">Contact</a>
     </nav>
 
@@ -110,7 +114,8 @@
           <a href="#projects"><span>04</span> Projects</a>
           <a href="#experience"><span>05</span> Experience</a>
           <a href="#education"><span>06</span> Education</a>
-          <a href="#contact"><span>07</span> Contact</a>
+          <a href="#thoughts"><span>07</span> Thoughts</a>
+          <a href="#contact"><span>08</span> Contact</a>
         </nav>
 
         <a
@@ -364,6 +369,22 @@
             <article><h3>AI / ML</h3><p>PyTorch, Transformers, NLP, Computer Vision, SLMs, Multimodal AI, VLMs</p></article>
             <article><h3>Web</h3><p>React, Vite, Node.js, Flask, HTML, CSS</p></article>
             <article><h3>Data &amp; tools</h3><p>MongoDB, MySQL, Firebase, Git, LaTeX, Kaggle</p></article>
+          </div>
+        </section>
+
+        <section class="section" id="thoughts" aria-labelledby="thoughts-title">
+          <div class="section-heading">
+            <p class="section-number">07</p>
+            <h2 id="thoughts-title">Thoughts</h2>
+          </div>
+          {% assign thought_pages = site.pages | where: "layout", "thought" | sort: "date" | reverse %}
+          <div class="thought-list">
+            {% for thought in thought_pages %}
+            <a class="thought-link" href="{{ thought.url | relative_url }}">
+              <h3>{{ thought.title }}</h3>
+              <span aria-hidden="true">Read ↗</span>
+            </a>
+            {% endfor %}
           </div>
         </section>
 

@@ -1,0 +1,8 @@
+title: Aftab Hossain Mikat - Academic Portfolio
+url: https://ahmikat.github.io
+baseurl: ""
+markdown: kramdown
+permalink: pretty
+exclude:
+  - README.md
+
