@@ -1,7 +1,7 @@
 ---
 layout: thought
 title: "A Human and an LLM Robot Wake Up in a Completely White Room"
-date: 2026-08-30
+date: 2026-08-30 00:00:00 +0600
 description: "A thought experiment about memory, agency, embodiment, and how GPT, Gemini, and Claude imagine an intelligent robot responding to the unknown."
 permalink: /thoughts/human-and-llm-robot-white-room/
 ---
@@ -73,4 +73,3 @@ That leaves the most interesting question unresolved:
 > If the robot acts, is it acting because it wants to understand the room - or because our prompt quietly taught it that understanding the room is the goal?
 
 The white room is not really about escape. It is a simple stage on which memory, agency, embodiment, and intelligence become difficult to separate.
-

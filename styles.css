@@ -807,8 +807,37 @@ main {
   line-height: 1.12;
 }
 
+.thought-body h3 {
+  margin: 38px 0 14px;
+  color: var(--ink);
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
 .thought-body p {
   margin: 0 0 25px;
+}
+
+.thought-body ul,
+.thought-body ol {
+  margin: 0 0 30px;
+  padding-left: 1.35em;
+}
+
+.thought-body li {
+  margin-bottom: 13px;
+  padding-left: 0.2em;
+}
+
+.thought-body code {
+  padding: 0.14em 0.38em;
+  color: var(--navy-dark);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.48);
+  font-family: var(--mono);
+  font-size: 0.78em;
 }
 
 .thought-body blockquote {
@@ -935,6 +964,11 @@ footer {
   .thought-body h2 {
     margin-top: 44px;
     font-size: 29px;
+  }
+
+  .thought-body h3 {
+    margin-top: 32px;
+    font-size: 23px;
   }
 
   .thought-body blockquote {
