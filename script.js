@@ -20,7 +20,7 @@ document.addEventListener("keydown", (event) => {
 });
 
 const tokenButton = document.querySelector(".token-button");
-const tokenWords = ["more", "better", "wisely"];
+const tokenWords = ["vision", "documents", "evidence"];
 let currentToken = 0;
 
 tokenButton?.addEventListener("click", () => {

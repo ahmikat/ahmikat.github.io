@@ -420,9 +420,14 @@ main {
   font-size: 14px;
 }
 
+.publication-list {
+  display: grid;
+  gap: 22px;
+  margin-left: 54px;
+}
+
 .publication-card {
   position: relative;
-  margin-left: 54px;
   padding: 32px;
   background: var(--white);
   border: 1px solid var(--line);
@@ -1172,6 +1177,7 @@ footer {
 
   .section-intro,
   .interest-grid,
+  .publication-list,
   .publication-card,
   .news-block,
   .project-grid,

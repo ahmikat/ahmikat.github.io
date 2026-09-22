@@ -79,7 +79,7 @@ layout: null
     <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
       <a href="#about">About</a>
       <a href="#research">Research</a>
-      <a href="#publication">Publication</a>
+      <a href="#publication">Publications</a>
       <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
       <a href="#education">Education</a>
@@ -110,7 +110,7 @@ layout: null
         <nav class="desktop-nav" aria-label="Primary navigation">
           <a href="#about"><span>01</span> About</a>
           <a href="#research"><span>02</span> Research</a>
-          <a href="#publication"><span>03</span> Publication</a>
+          <a href="#publication"><span>03</span> Publications</a>
           <a href="#projects"><span>04</span> Projects</a>
           <a href="#experience"><span>05</span> Experience</a>
           <a href="#education"><span>06</span> Education</a>
@@ -132,17 +132,16 @@ layout: null
         <section class="hero section" id="about" aria-labelledby="about-title">
           <p class="section-kicker">Hello, I am Mikat.</p>
           <h2 id="about-title">
-            I explore how compact models can learn
-            <button class="token-button" type="button" aria-live="polite">more</button>
-            from less.
+            I build multimodal systems that connect
+            <button class="token-button" type="button" aria-live="polite">vision</button>
+            and language.
           </h2>
           <p class="hero-copy">
             I am a senior Computer Science &amp; Engineering undergraduate at
-            <a href="https://www.ruet.ac.bd/" target="_blank" rel="noreferrer">RUET</a>, interested
-            in two connected research directions: efficient Small Language Models and Multimodal
-            AI that brings Natural Language Processing and Computer Vision together. I am
-            particularly interested in building vision-language models for Bangla and other
-            low-resource languages.
+            <a href="https://www.ruet.ac.bd/" target="_blank" rel="noreferrer">RUET</a>. My work
+            begins with Multimodal AI—especially document-grounded reasoning, visual evidence
+            localization, and vision-language models for Bangla and other low-resource languages—
+            and extends to efficient NLP and compact language-model pretraining.
           </p>
           <p class="hero-copy">
             I enjoy moving between research and engineering—studying why a method works, then
@@ -161,7 +160,7 @@ layout: null
           </div>
           <dl class="quick-facts" aria-label="Profile summary">
             <div><dt>Current</dt><dd>B.Sc. CSE · RUET</dd></div>
-            <div><dt>Research</dt><dd>Efficient SLMs &amp; Bangla VLMs</dd></div>
+            <div><dt>Research</dt><dd>Multimodal AI · Efficient NLP</dd></div>
             <div><dt>Based in</dt><dd>Bangladesh</dd></div>
           </dl>
         </section>
@@ -172,31 +171,30 @@ layout: null
             <h2 id="research-title">Research interests</h2>
           </div>
           <p class="section-intro">
-            My work follows two equally important tracks: training capable Small Language Models
-            efficiently, and building Multimodal AI systems that connect language with vision. A
-            central goal is to make vision-language models practical for Bangla and other
-            low-resource languages despite limited paired data and compute.
+            My primary interest is building Multimodal AI systems that can locate visual evidence,
+            understand documents, and reason across language and vision. Alongside this, I study
+            efficient NLP and compact language models that learn under limited data and compute.
           </p>
           <div class="interest-grid">
             <article>
               <span>01</span>
-              <h3>Small Language Models</h3>
-              <p>Compact, capable models designed for constrained data and compute budgets.</p>
+              <h3>Multimodal AI: NLP + CV</h3>
+              <p>Connecting language and vision through grounded, compute-aware multimodal systems.</p>
             </article>
             <article>
               <span>02</span>
-              <h3>Efficient Training</h3>
-              <p>MLM, ELECTRA-style RTD, curriculum learning, and data-efficient supervision.</p>
+              <h3>Document-Grounded Reasoning</h3>
+              <p>Locating visual evidence and converting complex documents into faithful reasoning inputs.</p>
             </article>
             <article>
               <span>03</span>
-              <h3>Multimodal AI: NLP + CV</h3>
-              <p>Learning shared representations across language and vision through efficient multimodal systems.</p>
+              <h3>Bangla Vision-Language Models</h3>
+              <p>Exploring culturally grounded VLMs for Bangla and other low-resource languages.</p>
             </article>
             <article>
               <span>04</span>
-              <h3>Bangla Vision-Language Models</h3>
-              <p>Exploring VLMs that connect Bangla text with visual information in low-resource settings.</p>
+              <h3>Efficient Language Models</h3>
+              <p>Small models, RTD–MLM training, curricula, and data-efficient supervision.</p>
             </article>
           </div>
         </section>
@@ -204,32 +202,58 @@ layout: null
         <section class="section" id="publication" aria-labelledby="publication-title">
           <div class="section-heading">
             <p class="section-number">03</p>
-            <h2 id="publication-title">Publication &amp; research</h2>
+            <h2 id="publication-title">Publications &amp; research</h2>
           </div>
-          <article class="publication-card">
-            <div class="publication-meta">
-              <span class="status">Accepted</span>
-              <span>BabyLM Workshop @ EMNLP 2026</span>
-              <span>Strict-Small Track</span>
-            </div>
-            <h3>
-              Dense Supervision, Gentle Decay: Curriculum-Guided Rebalancing of ELECTRA-Style RTD
-              and MLM for Small-Data Pretraining
-            </h3>
-            <p class="authors"><strong>Aftab Hossain Mikat</strong>, Tamjid Hasan Fahim</p>
-            <p>
-              A study of curriculum-guided objective rebalancing for compute- and data-constrained
-              language-model pretraining. Accepted on 28 August 2026.
-            </p>
-            <div class="publication-links">
-              <span>Paper link forthcoming</span>
-              <span>Code link forthcoming</span>
-            </div>
-          </article>
+          <div class="publication-list">
+            <article class="publication-card">
+              <div class="publication-meta">
+                <span class="status">Accepted · Archival</span>
+                <span>DocInsights Workshop @ EMNLP 2026</span>
+                <span>DocSem Shared Task · Poster</span>
+              </div>
+              <h3>When the Evidence Is Right, the Math Is Easy: Understanding the Challenges of Document-Grounded Reasoning</h3>
+              <p class="authors"><strong>Aftab Hossain Mikat</strong>, Tamjid Hasan Fahim</p>
+              <p>
+                LILIPUT separates visual evidence localization from downstream numerical reasoning.
+                Results indicate that correctly understanding and extracting document evidence is a
+                greater bottleneck than the final arithmetic.
+              </p>
+              <div class="publication-links">
+                <a href="https://openreview.net/forum?id=OLbriOa5y6" target="_blank" rel="noreferrer">OpenReview ↗</a>
+              </div>
+            </article>
+
+            <article class="publication-card">
+              <div class="publication-meta">
+                <span class="status">Accepted</span>
+                <span>BabyLM Workshop @ EMNLP 2026</span>
+                <span>Strict-Small Track</span>
+              </div>
+              <h3>
+                Dense Supervision, Gentle Decay: Curriculum-Guided Rebalancing of ELECTRA-Style RTD
+                and MLM for Small-Data Pretraining
+              </h3>
+              <p class="authors"><strong>Aftab Hossain Mikat</strong>, Tamjid Hasan Fahim</p>
+              <p>
+                A study of curriculum-guided objective rebalancing for compute- and data-constrained
+                language-model pretraining. Accepted on 28 August 2026.
+              </p>
+              <div class="publication-links">
+                <a href="assets/papers/BabyLM_Dense_Supervision_Gentle_Decay_Preprint.pdf" target="_blank" rel="noreferrer" type="application/pdf">Preprint (PDF) ↗</a>
+              </div>
+            </article>
+          </div>
 
           <div class="news-block">
             <h3>Recent news</h3>
             <ol>
+              <li>
+                <time datetime="2026-09">Sep 2026</time>
+                <p>
+                  Our DocSem shared-task system paper was accepted as an archival poster at the
+                  DocInsights Workshop @ EMNLP 2026.
+                </p>
+              </li>
               <li>
                 <time datetime="2026-08">Aug 2026</time>
                 <p>
@@ -354,7 +378,7 @@ layout: null
               <div class="date-range">Dec 2022 — Feb 2027 <span>expected</span></div>
               <h3>B.Sc. in Computer Science &amp; Engineering</h3>
               <p>Rajshahi University of Engineering &amp; Technology (RUET)</p>
-              <p>Rajshahi, Bangladesh · CGPA 3.39 / 4.00</p>
+              <p>Rajshahi, Bangladesh</p>
             </article>
             <article>
               <div class="date-range">Jul 2019 — Jun 2022</div>
