@@ -19,15 +19,6 @@ document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") closeMobileMenu();
 });
 
-const tokenButton = document.querySelector(".token-button");
-const tokenWords = ["vision", "documents", "evidence"];
-let currentToken = 0;
-
-tokenButton?.addEventListener("click", () => {
-  currentToken = (currentToken + 1) % tokenWords.length;
-  tokenButton.textContent = tokenWords[currentToken];
-});
-
 const sections = [...document.querySelectorAll("main section[id]")];
 const desktopLinks = [...document.querySelectorAll(".desktop-nav a")];
 

@@ -253,23 +253,13 @@ main {
   letter-spacing: -0.045em;
 }
 
-.token-button {
-  position: relative;
+.token-highlight {
   display: inline-block;
   padding: 0 0.16em;
   color: var(--white);
   background: var(--navy);
-  border: 0;
   border-radius: 1px;
-  font: inherit;
   line-height: 0.94;
-  cursor: pointer;
-  transition: background 200ms ease, transform 200ms ease;
-}
-
-.token-button:hover {
-  background: var(--terracotta);
-  transform: translateY(-2px);
 }
 
 .hero-copy {
