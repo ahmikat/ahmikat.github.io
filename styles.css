@@ -281,6 +281,27 @@ main {
   line-height: 1.62;
 }
 
+.research-announcement {
+  display: inline-block;
+  max-width: 100%;
+  margin-top: 10px;
+  padding: 12px 16px;
+  color: var(--navy-dark);
+  background: rgba(255, 253, 248, 0.78);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--terracotta);
+  font-family: var(--mono);
+  font-size: 12px;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.research-announcement:hover,
+.research-announcement:focus-visible {
+  border-color: var(--terracotta);
+  background: var(--white);
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -426,6 +447,17 @@ main {
   margin-left: 54px;
 }
 
+#publication .section-heading h2 {
+  font-size: clamp(40px, 4.4vw, 52px);
+}
+
+.publication-intro {
+  margin: 0 0 24px 54px;
+  color: var(--navy-dark);
+  font-family: var(--serif);
+  font-size: 21px;
+}
+
 .publication-card {
   position: relative;
   padding: 32px;
@@ -465,6 +497,11 @@ main {
   color: #355b45;
   background: #e2eee3;
   letter-spacing: 0.05em;
+}
+
+.publication-meta .publication-number {
+  color: var(--terracotta);
+  font-weight: 500;
 }
 
 .publication-card h3 {
@@ -1176,6 +1213,7 @@ footer {
   }
 
   .section-intro,
+  .publication-intro,
   .interest-grid,
   .publication-list,
   .publication-card,

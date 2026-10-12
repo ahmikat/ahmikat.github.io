@@ -5,7 +5,7 @@ Source for [ahmikat.github.io](https://ahmikat.github.io/), a lightweight and re
 ## Updating content
 
 - Edit profile and section copy in `index.html`.
-- Replace `assets/Aftab_Hossain_Mikat_CV.pdf` whenever the CV is updated; both CV anchors already point to it.
+- Edit `cv/Aftab_Hossain_Mikat_CV.tex`, compile it with Tectonic, and replace `assets/Aftab_Hossain_Mikat_CV.pdf`; both CV anchors point to that PDF.
 - Add a Markdown file with YAML front matter under `thoughts/posts/` to publish a new Thoughts article. GitHub Pages uses `_layouts/thought.html` and automatically adds its headline to the homepage.
 - Add the official BabyLM paper and code links when they become public.
 - Replace `assets/aftab-hossain-mikat.jpg` to update the portrait.

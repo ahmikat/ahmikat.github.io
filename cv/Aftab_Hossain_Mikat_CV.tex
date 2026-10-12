@@ -1,0 +1,195 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=0.58in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{needspace}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{fontawesome5}
+
+\definecolor{linkblue}{HTML}{005FAE}
+\definecolor{muted}{HTML}{4B4B4B}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=linkblue,
+  linkcolor=linkblue,
+  pdfauthor={Aftab Hossain Mikat},
+  pdftitle={Aftab Hossain Mikat - Curriculum Vitae},
+  pdfsubject={Academic Curriculum Vitae}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\color{gray}\itshape\footnotesize Aftab Hossain Mikat - Page \thepage\ of \pageref*{LastPage}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\linespread{1.035}
+\setlist[itemize]{leftmargin=1.35em,itemsep=2pt,topsep=3pt,parsep=0pt}
+\urlstyle{same}
+
+\newcommand{\cvsection}[1]{%
+  \needspace{3\baselineskip}%
+  \vspace{6pt}%
+  {\Large\bfseries #1}\par
+  \vspace{2pt}\hrule\vspace{5pt}%
+}
+
+\newcommand{\entryheading}[2]{%
+  \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X>{\raggedleft\arraybackslash}p{1.55in}@{}}
+    \textbf{#1} & \textit{#2}
+  \end{tabularx}\vspace{1pt}%
+}
+
+\newcommand{\subline}[1]{{\itshape #1}\par}
+\newcommand{\tech}[1]{\textbf{Tech Stack:} #1}
+\newcommand{\spacer}{\vspace{6pt}}
+\newcommand{\projectheading}[2]{\needspace{6\baselineskip}\entryheading{#1}{#2}}
+
+\begin{document}
+
+\begin{center}
+  {\fontsize{28}{32}\selectfont\bfseries Aftab Hossain Mikat}\par
+  \vspace{8pt}
+  \small
+  \faMapMarker*\ Rajshahi, Bangladesh
+  \quad
+  \href{tel:+8801866737922}{\faPhone*\ +880 1866-737922}
+  \quad
+  \href{mailto:drmikat@gmail.com}{\faEnvelope\ drmikat@gmail.com}
+  \par\vspace{5pt}
+  \href{https://ahmikat.github.io/}{\faGlobe\ ahmikat.github.io}
+  \quad
+  \href{https://www.linkedin.com/in/aftab-hossain-mikat}{\faLinkedin\ aftab-hossain-mikat}
+  \quad
+  \href{https://github.com/ahmikat}{\faGithub\ ahmikat}
+\end{center}
+
+\cvsection{About}
+Senior Computer Science and Engineering undergraduate at Rajshahi University of Engineering and
+Technology (RUET). I am exploring multimodal AI, vision-language models, and NLP, especially for
+Bangla and other low-resource languages. I also study compact language models, data-efficient
+learning, and training methods that help smaller models learn effectively.
+
+\cvsection{Education}
+\entryheading{Rajshahi University of Engineering and Technology (RUET)}{Dec 2022 -- Feb 2027}
+\subline{B.Sc. in Computer Science and Engineering (Expected) \hfill Rajshahi, Bangladesh}
+\begin{itemize}
+  \item \textbf{CGPA:} 3.43/4.00 through the 7th semester. Average across the previous two semesters: 3.68/4.00.
+  \item \textbf{Focus:} Natural Language Processing, Small Language Models, Deep Learning,
+        Algorithms, and Software Engineering.
+\end{itemize}
+\spacer
+
+\entryheading{St. Joseph Higher Secondary School}{Jul 2019 -- Jun 2022}
+\subline{Higher Secondary \hfill Dhaka, Bangladesh}
+\begin{itemize}
+  \item \textbf{GPA:} 5.00/5.00.
+\end{itemize}
+
+\cvsection{Publications}
+\entryheading{Dense Supervision, Gentle Decay: Curriculum-Guided Rebalancing of
+ELECTRA-Style RTD and MLM for Small-Data Pretraining}{Aug 2026}
+\textbf{Aftab Hossain Mikat}, Tamjid Hasan Fahim\par
+\subline{Accepted workshop paper at BabyLM Workshop @ EMNLP 2026 -- Strict-Small Track
+\hfill \href{https://ahmikat.github.io/assets/papers/BabyLM_Dense_Supervision_Gentle_Decay_Preprint.pdf}{Preprint \faExternalLink*}}
+{\small Studies curriculum-guided RTD--MLM rebalancing and training strategies for compact
+Bengali encoders under a strict data budget.\par}
+\spacer
+
+\entryheading{When the Evidence Is Right, the Math Is Easy: Understanding the
+Challenges of Document-Grounded Reasoning}{Sep 2026}
+\textbf{Aftab Hossain Mikat}, Tamjid Hasan Fahim\par
+\subline{Accepted archival workshop paper (poster) at DocInsights Workshop @ EMNLP 2026}
+{\small DocSem Shared Task \hfill \href{https://ahmikat.github.io/assets/papers/DocSem_Document_Grounded_Reasoning_Preprint.pdf}{Preprint \faExternalLink*}\par}
+{\small An analysis of document-grounded numerical reasoning, showing how visual evidence
+extraction and localization can be harder than the arithmetic itself.\par}
+
+\cvsection{Experience}
+\entryheading{Walton Hi-Tech Industries PLC}{Feb 2026 -- Mar 2026}
+\subline{ICT Department - Two-week Industrial Attachment \hfill Gazipur, Bangladesh}
+\begin{itemize}
+  \item Gained practical exposure to enterprise software, server infrastructure, networking,
+        manufacturing technology, and quality-control operations across industrial departments.
+  \item Collaborated in a team to build a Notification Management Website using React,
+        TypeScript, Vite, and Django; the system received positive feedback from the organization.
+\end{itemize}
+
+\cvsection{Projects}
+\projectheading{BoostLearning AI: AI-Powered Study Assistant}{\href{https://github.com/ahmikat/Smart-Study-Assistant}{GitHub \faExternalLink*}}
+\begin{itemize}
+  \item Developed a full-stack study assistant featuring a customizable lab-report generator,
+        PDF/text-to-MCQ and narrative question generation, topic explanation, paraphrasing, and
+        personalized study planning.
+  \item \tech{React, TypeScript, Flask, Firebase Authentication, MongoDB, Gemini API}
+\end{itemize}
+\spacer
+
+\projectheading{Notification Management Website}{\href{https://github.com/ahmikat/notification_project}{GitHub \faExternalLink*}}
+\begin{itemize}
+  \item Built with a team during the Walton industrial attachment to support structured creation
+        and management of organizational notifications through a modern web interface.
+  \item \tech{React, TypeScript, Vite, Django}
+\end{itemize}
+\spacer
+
+\projectheading{WhatsApp Chat Analyzer: Communication Analytics Platform}{\href{https://github.com/ahmikat/WhatsApp-Chat-Analysis}{GitHub \faExternalLink*}}
+\begin{itemize}
+  \item Developed a web-based communication analytics platform with NLP/ML-powered sentiment
+        analysis, message classification, multilingual support, interactive visualizations, and
+        secure JWT/Bcrypt authentication; optimized large-chat processing through caching and
+        batch translation.
+  \item \tech{Python, Streamlit, NLP/ML, JWT, Bcrypt}
+\end{itemize}
+\spacer
+
+\projectheading{MovieZone: Movie Discovery Platform}{\href{https://movie-explorer-silk-one.vercel.app/}{Live \faExternalLink*}\ -- \href{https://github.com/ahmikat/movie-explorer}{GitHub \faExternalLink*}}
+\begin{itemize}
+  \item Developed a React and TypeScript movie discovery platform with search, genre and country
+        filtering, ratings-based sorting, detailed movie information, personalized watchlists,
+        recommendations, and dark mode. Integrated an external API for rich film and series data.
+  \item \tech{React, TypeScript, External Movie API}
+\end{itemize}
+\spacer
+
+\projectheading{Full-Stack Blog Platform}{\href{https://blog-three-kappa-10.vercel.app/}{Live \faExternalLink*}\ -- \href{https://github.com/ahmikat/FullStack-Blog}{GitHub \faExternalLink*}}
+\begin{itemize}
+  \item Developed a full-stack blogging platform for publishing and reading long-form content with
+        a responsive user experience and persistent data storage.
+  \item \tech{Node.js, React, TypeScript, MongoDB}
+\end{itemize}
+\cvsection{Technical Skills}
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}p{1.35in}X@{}}
+  Programming & C++, Python, JavaScript, TypeScript \\
+  AI and ML & PyTorch, Hugging Face Transformers, Scikit-learn, Pandas, NumPy, NLP, Computer Vision, Multimodal AI, Small Language Models, Deep Learning \\
+  Web & React, Vite, Node.js, Express.js, Flask, Django, HTML, CSS, Bootstrap \\
+  Databases & MongoDB, MySQL, Firebase \\
+  Tools & Git, GitHub, LaTeX, Kaggle, Vercel, Railway \\
+  CS Foundations & Data Structures and Algorithms, Competitive Programming, Algorithmic Problem Solving
+\end{tabularx}
+
+\cvsection{Research Interests and Achievements}
+\textbf{Research Interests:} Multimodal AI, Vision-Language Models, Efficient NLP, Small Language
+Models, Knowledge Distillation, Teacher--Student Learning, Bangla and Low-resource Language AI,
+and Document-Grounded Reasoning.\par\vspace{4pt}
+\textbf{Achievements:} Two accepted EMNLP 2026 workshop papers: BabyLM (Strict-Small Track)
+and DocInsights (DocSem Shared Task, archival poster).
+
+\cvsection{Additional Achievements}
+\begin{itemize}
+  \item Solved 250+ programming problems on Codeforces.
+  \item Received General Scholarships in the Secondary School Certificate and Junior School Certificate examinations.
+  \item \textbf{Languages:} Bengali and English.
+\end{itemize}
+
+\end{document}
