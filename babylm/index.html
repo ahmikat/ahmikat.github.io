@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f6f2e9" />
+    <meta name="description" content="Five compact language models, one 10-million-word BabyLM budget, and a study of when dense RTD supervision should give way to MLM." />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Dense Supervision, Gentle Decay | BabyLM Research" />
+    <meta property="og:description" content="A concise project page on five BabyLM Strict-Small training schedules and their official evaluation results." />
+    <meta property="og:url" content="https://ahmikat.github.io/babylm/" />
+    <link rel="canonical" href="https://ahmikat.github.io/babylm/" />
+    <link rel="icon" href="../assets/aftab-hossain-mikat.jpg" type="image/jpeg" />
+    <link rel="preload" href="fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Dense Supervision, Gentle Decay | BabyLM Research</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="page">
+      <header class="site-header">
+        <a class="wordmark" href="../" aria-label="Aftab Hossain Mikat portfolio">AHM<span class="wordmark-dot">.</span></a>
+        <nav aria-label="Page navigation">
+          <a href="#data">Data</a>
+          <a href="#models">Models</a>
+          <a href="#results">Results</a>
+          <a href="#findings">Findings</a>
+        </nav>
+        <a class="header-paper" href="../assets/papers/BabyLM_Dense_Supervision_Gentle_Decay_Preprint.pdf">Read paper <span aria-hidden="true">↗</span></a>
+      </header>
+
+      <main id="main">
+        <section class="hero" aria-labelledby="project-title">
+          <div class="hero-overline"><span class="overline-rule"></span> BabyLM 2026 · Strict-Small Track</div>
+          <h1 id="project-title">Dense Supervision,<br /><em>Gentle Decay.</em></h1>
+          <p class="hero-subtitle">Curriculum-guided rebalancing of ELECTRA-style replaced-token detection and masked language modeling for small-data pretraining.</p>
+          <p class="byline"><strong>Aftab Hossain Mikat</strong> · Tamjid Hasan Fahim <span class="byline-divider">/</span> RUET, Bangladesh</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="../assets/papers/BabyLM_Dense_Supervision_Gentle_Decay_Preprint.pdf">Paper <span aria-hidden="true">↗</span></a>
+            <a class="button button-quiet" href="#results">Explore results <span aria-hidden="true">↓</span></a>
+          </div>
+          <p class="hero-note">BabyLM Workshop @ EMNLP 2026 <span aria-hidden="true">·</span> Five single-seed DeBERTa-v2 runs</p>
+        </section>
+
+        <section class="intro section" aria-labelledby="question-title">
+          <div class="section-label"><span>01</span> The question</div>
+          <div>
+            <h2 id="question-title">When every word counts, which learning signal should lead?</h2>
+            <p>With very little training text, <abbr title="replaced-token detection">RTD</abbr> gives the model a dense signal: it checks whether nearly every token belongs in its context. <abbr title="masked language modeling">MLM</abbr> asks it to recover selected missing words. We tested whether RTD should stay strong throughout training or gradually make more room for MLM.</p>
+            <p class="intro-takeaway"><span class="takeaway-mark">↳</span> Our matched comparison keeps both tasks active, changing only the weight of RTD over time.</p>
+          </div>
+        </section>
+
+        <section class="section data-section" id="data" aria-labelledby="data-title">
+          <div class="section-label"><span>02</span> Data &amp; setup</div>
+          <div class="section-body">
+            <div class="section-heading">
+              <h2 id="data-title">One small corpus. One shared budget.</h2>
+              <p>All five systems use the official BabyLM 2026 Strict-Small English corpus, the same backbone dimensions, and the same maximum training exposure.</p>
+            </div>
+            <div class="fact-grid" aria-label="Shared experimental setup">
+              <div class="fact"><strong>10M</strong><span>words in the training corpus</span></div>
+              <div class="fact"><strong>10×</strong><span>maximum passes over the corpus</span></div>
+              <div class="fact"><strong>5</strong><span>single-seed DeBERTa-v2 runs</span></div>
+            </div>
+            <p class="data-note">Shared tokenizer: 16K SentencePiece unigram. Discriminator: 12 layers, 384 hidden units. No external teacher or evaluation labels were used for training.</p>
+          </div>
+        </section>
+
+        <section class="section model-section" id="models" aria-labelledby="models-title">
+          <div class="section-label"><span>03</span> Five models</div>
+          <div class="section-body">
+            <div class="section-heading">
+              <h2 id="models-title">Five ways to spend the same learning budget.</h2>
+              <p>We vary the objective balance, the words chosen for masking, and the order of examples. The comparison of <em>bgb-decay</em> with <em>Baby Got BERT</em> changes just one factor.</p>
+            </div>
+            <div class="model-list">
+              <article class="model-row featured-model">
+                <span class="model-index">01 / Main model</span>
+                <div><h3>bgb-decay</h3><p>RTD stays active, with its weight stepped down from 50 to 25 to 10; MLM continues throughout.</p></div>
+                <span class="model-tag">Objective decay</span>
+              </article>
+              <article class="model-row">
+                <span class="model-index">02 / Matched reference</span>
+                <div><h3>Baby Got BERT</h3><p>The same joint RTD + MLM setup, but RTD keeps a fixed weight of 50.</p></div>
+                <span class="model-tag">Fixed objective</span>
+              </article>
+              <article class="model-row">
+                <span class="model-index">03 / Data &amp; masks</span>
+                <div><h3>LAD Got BERT</h3><p>Fixed RTD, with early easy-to-hard example ordering and later adaptive MLM masking.</p></div>
+                <span class="model-tag">Data curriculum</span>
+              </article>
+              <article class="model-row">
+                <span class="model-index">04 / Early handoff</span>
+                <div><h3>Lilliput Lexicon</h3><p>Uses RTD as an early scaffold, then switches to whole-word and adaptive MLM.</p></div>
+                <span class="model-tag">Lexical curriculum</span>
+              </article>
+              <article class="model-row">
+                <span class="model-index">05 / Staged handoff</span>
+                <div><h3>Lilliput Curriculum</h3><p>Starts with short-context bias, gradually withdraws RTD, then uses adaptive whole-word MLM.</p></div>
+                <span class="model-tag">Staged curriculum</span>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="figure-section" aria-labelledby="figure-title">
+          <div class="figure-copy"><span class="figure-kicker">THE CENTRAL EXPERIMENT</span><h2 id="figure-title">Keep the dense signal.<br /><em>Ease its influence.</em></h2><p>Unlike a full RTD-to-MLM handoff, bgb-decay retains both objectives across the entire budget. Only the RTD coefficient changes.</p></div>
+          <figure class="schedule-figure">
+            <svg viewBox="0 0 560 220" role="img" aria-labelledby="schedule-title schedule-desc">
+              <title id="schedule-title">RTD weight across the training budget</title>
+              <desc id="schedule-desc">Baby Got BERT keeps RTD weight 50 from zero to 100 million word presentations. bgb-decay uses 50 until 40 million, 25 until 70 million, and 10 until 100 million.</desc>
+              <g class="grid-lines"><line x1="60" y1="28" x2="538" y2="28"/><line x1="60" y1="106" x2="538" y2="106"/><line x1="60" y1="153" x2="538" y2="153"/><line x1="60" y1="184" x2="538" y2="184"/></g>
+              <g class="axis-labels"><text x="16" y="33">50</text><text x="16" y="111">25</text><text x="20" y="158">10</text><text x="53" y="208">0</text><text x="240" y="208">40M</text><text x="382" y="208">70M</text><text x="502" y="208">100M</text></g>
+              <path class="fixed-line" d="M60 28 H538" />
+              <path class="decay-line" d="M60 28 H251 V106 H395 V153 H538" />
+              <circle class="decay-dot" cx="538" cy="153" r="5" />
+            </svg>
+            <figcaption><span><i class="legend-line legend-decay"></i> bgb-decay</span><span><i class="legend-line legend-fixed"></i> Baby Got BERT</span><small>RTD coefficient by cumulative word presentations</small></figcaption>
+          </figure>
+        </section>
+
+        <section class="section results-section" id="results" aria-labelledby="results-title">
+          <div class="section-label"><span>04</span> Results</div>
+          <div class="section-body">
+            <div class="section-heading">
+              <h2 id="results-title">The broadest balance came from gentle decay.</h2>
+              <p>Final official BabyLM 2026 Strict-Small evaluation. Higher scores are better. The two aggregates summarize different task groups, so the category-level profile matters too.</p>
+            </div>
+            <div class="table-scroll" role="region" aria-label="Five-model results table" tabindex="0">
+              <table>
+                <thead><tr><th scope="col">Model</th><th scope="col">Overall ↑</th><th scope="col">NLP avg. ↑</th><th scope="col">Category highlight</th></tr></thead>
+                <tbody>
+                  <tr class="lead-row"><th scope="row">bgb-decay <span class="best-label">Best aggregate</span></th><td>40.16</td><td>51.04</td><td>Highest BLiMP, Entity Tracking &amp; COMPS in our five runs</td></tr>
+                  <tr><th scope="row">Baby Got BERT</th><td>39.82</td><td>50.58</td><td>Matched fixed-RTD reference</td></tr>
+                  <tr><th scope="row">LAD Got BERT</th><td>39.55</td><td>50.25</td><td>Highest BLiMP Supplement: 62.32</td></tr>
+                  <tr><th scope="row">Lilliput Lexicon</th><td>39.55</td><td>50.04</td><td>Highest EWoK: 52.79; GlobalPIQA: 36.64</td></tr>
+                  <tr><th scope="row">Lilliput Curriculum</th><td>39.98</td><td>50.45</td><td>Highest (Super)GLUE: 69.24; Reading: 6.66</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="table-note">Scores are official challenge category aggregates, not percentages of correct answers. “Highest” refers only to these five runs. Each configuration was trained once (seed 42); small differences need replication.</p>
+          </div>
+        </section>
+
+        <section class="section findings-section" id="findings" aria-labelledby="findings-title">
+          <div class="section-label"><span>05</span> Findings</div>
+          <div class="section-body">
+            <h2 id="findings-title">What we learned.</h2>
+            <div class="finding-grid">
+              <article><span class="finding-number">I</span><h3>Decay beats fixed RTD in the matched pair.</h3><p>bgb-decay is <strong>+0.34 Overall</strong> and <strong>+0.46 NLP average</strong> ahead of Baby Got BERT, with gains on six of seven NLP categories.</p></article>
+              <article><span class="finding-number">II</span><h3>Other curricula specialize.</h3><p>LAD improves BLiMP Supplement; the Lilliput runs lift selected knowledge, transfer, or reading tasks. Those gains come with losses elsewhere.</p></article>
+              <article><span class="finding-number">III</span><h3>The claim has a clear limit.</h3><p>Only the fixed-versus-decay pair isolates one change. The other models alter multiple factors, and all five are single-seed runs.</p></article>
+            </div>
+            <div class="closing-note"><span>In one sentence</span><p>Under this small-data budget, gradually reducing RTD’s weight gave the best observed balance across tasks.</p></div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <span>Dense Supervision, Gentle Decay <span class="footer-separator">/</span> BabyLM 2026</span>
+        <div><a href="../">Back to portfolio ↑</a><a href="../assets/papers/BabyLM_Dense_Supervision_Gentle_Decay_Preprint.pdf">Paper ↗</a></div>
+      </footer>
+    </div>
+  </body>
+</html>
