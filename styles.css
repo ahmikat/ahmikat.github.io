@@ -212,16 +212,6 @@ a {
   transform: translateX(4px);
 }
 
-.sidebar-cv-link {
-  display: inline-block;
-  color: var(--navy);
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.04em;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
 main {
   min-width: 0;
   padding: 68px 0 36px;
@@ -316,11 +306,6 @@ main {
 .button.primary {
   color: var(--white);
   background: var(--navy);
-}
-
-.button.secondary {
-  color: var(--navy);
-  background: transparent;
 }
 
 .button:hover {
@@ -1121,8 +1106,7 @@ footer {
     font-size: 36px;
   }
 
-  .desktop-nav,
-  .sidebar-cv-link {
+  .desktop-nav {
     display: none;
   }
 
