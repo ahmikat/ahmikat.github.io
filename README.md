@@ -5,9 +5,9 @@ Source for [ahmikat.github.io](https://ahmikat.github.io/), a lightweight and re
 ## Updating content
 
 - Edit profile and section copy in `index.html`.
-- The CV source remains at `cv/Aftab_Hossain_Mikat_CV.tex` and its PDF remains at `assets/Aftab_Hossain_Mikat_CV.pdf`. The homepage currently has no CV link.
+- The CV source remains at `cv/Aftab_Hossain_Mikat_CV.tex` and its PDF remains at `assets/Aftab_Hossain_Mikat_CV.pdf`. The homepage links to the PDF.
 - Add a Markdown file with YAML front matter under `thoughts/posts/` to publish a new Thoughts article. GitHub Pages uses `_layouts/thought.html` and automatically adds its headline to the homepage.
-- Add the official BabyLM paper and code links when they become public.
+- Keep publication statuses and external paper links current in `index.html` and `babylm/index.html`.
 - Replace `assets/aftab-hossain-mikat.jpg` to update the portrait.
 - Replace `assets/og.png` to update the social sharing card.
 

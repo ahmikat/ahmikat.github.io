@@ -378,6 +378,27 @@ main {
   font-size: 19px;
 }
 
+#research,
+#publication {
+  padding-block: 52px;
+}
+
+#research .section-heading,
+#publication .section-heading {
+  margin-bottom: 18px;
+}
+
+#research .section-heading h2,
+#publication .section-heading h2 {
+  font-size: clamp(34px, 3.7vw, 44px);
+}
+
+#research .section-intro {
+  margin-bottom: 18px;
+  font-family: var(--sans);
+  font-size: 15px;
+}
+
 .interest-grid,
 .skills-grid {
   display: grid;
@@ -395,6 +416,11 @@ main {
   border-bottom: 1px solid var(--line);
 }
 
+#research .interest-grid article {
+  min-height: 128px;
+  padding: 17px 20px;
+}
+
 .interest-grid span {
   color: var(--terracotta);
   font-family: var(--mono);
@@ -409,6 +435,18 @@ main {
   line-height: 1.2;
 }
 
+#research .interest-grid h3 {
+  margin: 9px 0 5px;
+  font-family: var(--sans);
+  font-size: 17px;
+  font-weight: 700;
+}
+
+#research .interest-grid p {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
 .interest-grid p,
 .skills-grid p {
   margin: 0;
@@ -418,24 +456,19 @@ main {
 
 .publication-list {
   display: grid;
-  gap: 22px;
+  gap: 12px;
   margin-left: 54px;
 }
 
-#publication .section-heading h2 {
-  font-size: clamp(40px, 4.4vw, 52px);
-}
-
 .publication-intro {
-  margin: 0 0 24px 54px;
+  margin: 0 0 18px 54px;
   color: var(--navy-dark);
-  font-family: var(--serif);
-  font-size: 21px;
+  font-size: 14px;
 }
 
 .publication-card {
   position: relative;
-  padding: 32px;
+  padding: 20px 24px;
   background: var(--white);
   border: 1px solid var(--line);
   box-shadow: var(--shadow);
@@ -474,6 +507,11 @@ main {
   letter-spacing: 0.05em;
 }
 
+.publication-card.submission-card .status {
+  color: #765b30;
+  background: #f7ecd8;
+}
+
 .publication-meta .publication-number {
   color: var(--terracotta);
   font-weight: 500;
@@ -481,11 +519,11 @@ main {
 
 .publication-card h3 {
   max-width: 650px;
-  margin: 24px 0 12px;
+  margin: 12px 0 5px;
   font-family: var(--serif);
-  font-size: clamp(25px, 3vw, 32px);
-  font-weight: 500;
-  line-height: 1.15;
+  font-size: clamp(21px, 2.5vw, 25px);
+  font-weight: 600;
+  line-height: 1.2;
 }
 
 .publication-card p {
@@ -494,16 +532,23 @@ main {
 
 .publication-card .authors {
   color: var(--ink);
+  margin: 0;
+  font-size: 13px;
 }
 
 .publication-links {
   display: flex;
   flex-wrap: wrap;
   gap: 18px;
-  margin-top: 22px;
+  margin-top: 10px;
   color: var(--muted);
   font-family: var(--mono);
   font-size: 10px;
+}
+
+.publication-links > span {
+  color: var(--muted);
+  font-style: italic;
 }
 
 .news-block {
@@ -1211,7 +1256,7 @@ footer {
   }
 
   .publication-card {
-    padding: 24px;
+    padding: 18px 20px;
   }
 
   .publication-meta {
